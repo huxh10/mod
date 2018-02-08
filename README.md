@@ -30,7 +30,7 @@ We use this [caffe Mobilenet-SSD implementation](https://github.com/chuanqi305/M
 
 3. Compile caffemodel to Movidius graph and run
 	* copy ```MobileNetSSD_deploy.caffemodel``` and ```MobileNetSSD_deploy.prototxt``` to ```ncappzoo/caffe/SSD_Mobilenet```
-	* run ```mvNCCompile -w MobileNetSSD_deploy.caffemodel -s 12 MobileNetSSD_deploy.prototxt``` to get graph file, which is exectuted in Movidius Neural Compute Stick.
+
+	* run ```mvNCCompile -w MobileNetSSD_deploy.caffemodel -s 12 MobileNetSSD_deploy.prototxt``` to get graph file, which is exectuted in Movidius Neural Compute Stick. Current mvNCCompile has a bug while compile the customized prototxt, [to fix it](https://ncsforum.movidius.com/discussion/572/converting-ssd-mobilenet#latest).
+
 	* run ```python3 run.py```. We have another python file ```run_video.py``` to process video.
-
-
